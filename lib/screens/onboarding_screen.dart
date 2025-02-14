@@ -1,9 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
+  OnboardingScreen({super.key});
   final introKey = GlobalKey<IntroductionScreenState>();
 
   @override
@@ -24,56 +23,86 @@ class OnboardingScreen extends StatelessWidget {
             title: "Shop Now",
             body:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            image: Image.asset(
-              "assets/images/splash1.png",
-              width: 200,
+            image: RepaintBoundary(
+              child: Image.asset(
+                "assets/images/splash1.png",
+                width: 200,
+                cacheHeight: 400,
+                cacheWidth: 400,
+              ),
             ),
             decoration: pageDecoration),
         PageViewModel(
             title: "Big Discount",
             body:
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            image: Image.asset(
-              "assets/images/splash2.png",
-              width: 200,
+            image: RepaintBoundary(
+              child: Image.asset(
+                "assets/images/splash2.png",
+                width: 200,
+                cacheHeight: 400,
+                cacheWidth: 400,
+              ),
             ),
             decoration: pageDecoration),
         PageViewModel(
-            title: "Free Delivery",
-            body:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            image: Image.asset(
+          title: "Free Delivery",
+          body:
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+          image: RepaintBoundary(
+            child: Image.asset(
               "assets/images/splash3.png",
               width: 200,
+              cacheHeight: 400,
+              cacheWidth: 400,
             ),
-            decoration: pageDecoration,
-            footer: Padding(
-              padding: EdgeInsets.only(
-                left: 15,
-                right: 15,
+          ),
+          decoration: pageDecoration,
+          footer: Padding(
+            padding: EdgeInsets.only(
+              left: 15,
+              right: 15,
+            ),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(55),
+                backgroundColor: Color(0xFFEf6969),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)
+                )
               ),
-              
-            )),
+              child: const Text(
+                "Let's Shop",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18
+                ),
+              ),
+            ),
+          ),
+        ),
       ],
       showSkipButton: true,
       showDoneButton: true,
       showBackButton: false,
-      back: Text(
+      back: const Text(
         "Back",
         style: TextStyle(fontWeight: FontWeight.w700, color: Color(0xFFEF6969)),
       ),
-      next: Text(
+      next: const Text(
         "Next",
         style: TextStyle(fontWeight: FontWeight.w700, color: Color(0xFFEF6969)),
       ),
-      done: Text(
+      done: const Text(
         "Done",
         style: TextStyle(fontWeight: FontWeight.w700, color: Color(0xFFEF6969)),
       ),
-      skip: Text(
+      skip: const Text(
         "Skip",
         style: TextStyle(fontWeight: FontWeight.w700, color: Color(0xFFEF6969)),
       ),
+      scrollPhysics: const BouncingScrollPhysics(),
       onDone: () {},
       onSkip: () {},
       dotsDecorator: DotsDecorator(
