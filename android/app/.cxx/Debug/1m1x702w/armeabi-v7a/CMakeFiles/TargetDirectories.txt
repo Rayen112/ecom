@@ -1,0 +1,2 @@
+C:/Users/labid/OneDrive/Bureau/flutter_ui/ecommerce/android/app/.cxx/Debug/1m1x702w/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/labid/OneDrive/Bureau/flutter_ui/ecommerce/android/app/.cxx/Debug/1m1x702w/armeabi-v7a/CMakeFiles/rebuild_cache.dir
